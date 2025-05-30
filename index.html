@@ -1,11 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio de l'Équipe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />   
+    <link rel="stylesheet" href="composant/css/style.css">
 </head>
 <body>
-    
+    <header class="hero">
+        <div class="container">
+            <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">Bienvenue sur le Portfolio de notre Équipe</h1>
+            <p class="lead animate__animated animate__fadeInUp animate__delay-1s">Rencontrez les personnes incroyables derrière notre succès</p>
+            <button class="btn btn-warning btn-lg mt-3 animate__animated animate__zoomIn animate__delay-2s" onclick="scrollToTeam()">Découvrir l'équipe</button>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <section id="team" class="text-center py-5">
+            <div class="container">
+            <h2 class="mb-4 fw-bold text-primary">Notre Équipe</h2>
+            <p class="mb-5 text-muted">Nous sommes un groupe de professionnels passionnés, dédiés à l'excellence.</p>
+            <div class="row g-4">
+                <div class="col-md-3 team-member">
+                <div class="card border-0 shadow-sm">
+                    <img src="images/DSC04588.JPG.jpg" class="card-img-top rounded-circle mx-auto mt-3" alt="Membre de l'Équipe" style="width: 150px; height: 150px;">
+                    <div class="card-body">
+                    <h5 class="card-title text-primary">John Doe</h5>
+                    <p class="card-text text-muted">Chef de Projet</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm">Voir Profil</a>
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-3 team-member">
+                <div class="card border-0 shadow-sm">
+                    <img src="https://via.placeholder.com/150" class="card-img-top rounded-circle mx-auto mt-3" alt="Membre de l'Équipe" style="width: 150px; height: 150px;">
+                    <div class="card-body">
+                    <h5 class="card-title text-primary">Jane Smith</h5>
+                    <p class="card-text text-muted">Développeuse Principale</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm">Voir Profil</a>
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-3 team-member">
+                <div class="card border-0 shadow-sm">
+                    <img src="https://via.placeholder.com/150" class="card-img-top rounded-circle mx-auto mt-3" alt="Membre de l'Équipe" style="width: 150px; height: 150px;">
+                    <div class="card-body">
+                    <h5 class="card-title text-primary">Alice Brown</h5>
+                    <p class="card-text text-muted">Designer UI/UX</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm">Voir Profil</a>
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-3 team-member">
+                <div class="card border-0 shadow-sm">
+                    <img src="https://via.placeholder.com/150" class="card-img-top rounded-circle mx-auto mt-3" alt="Membre de l'Équipe" style="width: 150px; height: 150px;">
+                    <div class="card-body">
+                    <h5 class="card-title text-primary">Bob Martin</h5>
+                    <p class="card-text text-muted">Développeur Backend</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm">Voir Profil</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2023 Team Best CV. Tous droits réservés. <a href="#">Mentions légales</a></p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script src="composant/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
