@@ -1,0 +1,45 @@
+body{
+    background: linear-gradient(to right, #96f4fe, rgb(251, 153, 212));
+    color: white;
+ font-family: "Qwigley", cursive;
+
+}
+
+
+header{
+    display: flex;
+    gap:25em;
+}
+
+.link a{
+margin-left: 25px;
+text-decoration: none;
+font-family: 'Courier New', Courier, monospace;
+font-size: 17px;
+}
+.name{
+    margin-left: 14em;
+}
+.view-more{
+    border: 1.5px solid rgb(0, 98, 255);
+    color: rgb(0, 98, 255);
+    width: 6.5%;
+    padding: 5px;
+    border-radius: 15%;
+    cursor: pointer;
+    text-decoration: none;
+}
+main{
+    display: flex;
+    gap: 45px;
+    margin-left: 17em;
+}
+.image img{
+    width: 17em;
+    height: 27em;
+    border-radius: 40%;
+    
+}
+.main{
+    margin-top: 5em;
+}

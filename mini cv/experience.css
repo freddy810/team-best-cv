@@ -1,0 +1,35 @@
+body{
+    background: linear-gradient(to right, #96f4fe, rgb(251, 153, 212));
+ font-family: "Qwigley", cursive;
+}
+nav{
+    display: flex;
+    gap: 25em;
+    margin-left: 14em;
+    width: 50%;
+    .a{display:flex ;
+gap: 25px;}
+}
+nav a{
+    position: relative;
+    text-decoration: none;
+   padding: 10px;
+   font-family: 'Courier New', Courier, monospace;
+}
+nav a::before{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    background: rgb(255, 146, 250);
+    height: 0;
+    width: 100%;
+    left: 0;
+    bottom: -5px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    transition: height 0.5s;
+}
+nav a:hover::before{
+    height: 85px;
+
+}
