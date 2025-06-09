@@ -1,85 +1,305 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de l'Équipe</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />   
-    <link rel="stylesheet" href="composant/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Team-Best-CV</title>
+  <link rel="icon" href="images/DSC04588.JPG.jpg" type="image/png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    body {
+      background: #f8f9fa;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* Ajout d'un padding-bottom pour éviter que le footer bloque les animations */
+    .container {
+      padding-bottom: 100px;
+    }
+
+    /* Loader plein écran */
+    #loader {
+      position: fixed;
+      z-index: 9999;
+      background: white;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 1.5s ease, visibility 1.5s;
+      flex-direction: column;
+    }
+
+    #loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .typewriter h4 {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid #007bff;
+      animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+      font-family: monospace;
+      color: #007bff;
+      font-size: 1.2rem;
+      margin-top: 20px;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: #007bff }
+    }
+
+    .hero {
+      background: linear-gradient(to right, #4e54c8, #8f94fb);
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      transition: 0.3s ease;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Footer amélioré */
+    footer {
+      background: #343a40;
+      color: white;
+      padding-top: 3rem;
+      padding-bottom: 1rem;
+      text-align: left;
+    }
+
+    footer h5 {
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    footer p i {
+      margin-right: 8px;
+      color: #0d6efd;
+    }
+  </style>
 </head>
 <body>
-    <header class="hero">
-        <div class="container">
-            <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">Bienvenue sur le Portfolio de notre Équipe</h1>
-            <p class="lead animate__animated animate__fadeInUp animate__delay-1s">Rencontrez les personnes incroyables derrière notre succès</p>
-            <button class="btn btn-warning btn-lg mt-3 animate__animated animate__zoomIn animate__delay-2s" onclick="scrollToTeam()">Découvrir l'équipe</button>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="spinner-border text-primary mb-3" role="status" style="width: 4rem; height: 4rem;">
+      <span class="visually-hidden">Chargement...</span>
+    </div>
+    <div class="typewriter">
+      <h4>Chargement du CV collaboratif...</h4>
+    </div>
+  </div>
+
+  <!-- En-tête -->
+  <div class="hero" id="hero" data-aos="zoom-in">
+    <h1 class="display-4">Team Best CV</h1>
+    <p class="lead">Découvrez les profils de notre équipe talentueuse</p>
+  </div>
+
+  <!-- Section des CV -->
+  <div class="container my-5" id="cvSection">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+
+      <!-- Carte membre 1 -->
+      <div class="col" data-aos="fade-up" data-aos-delay="100">
+        <div class="card h-100 text-center">
+          <img src="images/DSC04588.JPG.jpg" class="card-img-top" alt="Photo membre 1" />
+          <div class="card-body">
+            <h5 class="card-title">RAZANATSOA Aimé Freddy</h5>
+            <p class="card-text">Developpeur Web et Application</p>
+            <button class="btn btn-primary" onclick="showCV('Alice Martin', 'Frontend - HTML, CSS, JS, React')">Voir CV</button>
+          </div>
         </div>
-    </header>
+      </div>
 
-    <main class="container my-5">
-        <section id="team" class="text-center py-5">
-            <div class="container">
-            <h2 class="mb-4 fw-bold text-primary">Notre Équipe</h2>
-            <p class="mb-5 text-muted">Nous sommes un groupe de professionnels passionnés, dédiés à l'excellence.</p>
-            <div class="row g-4">
-                <div class="col-md-3 team-member">
-                <div class="card border-0 shadow-sm">
-                    <img src="images/DSC04588.JPG.jpg" class="card-img-top rounded-circle mx-auto mt-3" alt="Membre de l'Équipe" style="width: 150px; height: 150px;">
-                    <div class="card-body">
-                    <h5 class="card-title text-primary">John Doe</h5>
-                    <p class="card-text text-muted">Chef de Projet</p>
-                    <a href="#" class="btn btn-outline-primary btn-sm">Voir Profil</a>
-                    </div>
-                </div>
-                </div>
-                <div class="col-md-3 team-member">
-                <div class="card border-0 shadow-sm">
-                    <img src="https://via.placeholder.com/150" class="card-img-top rounded-circle mx-auto mt-3" alt="Membre de l'Équipe" style="width: 150px; height: 150px;">
-                    <div class="card-body">
-                    <h5 class="card-title text-primary">Jane Smith</h5>
-                    <p class="card-text text-muted">Développeuse Principale</p>
-                    <a href="#" class="btn btn-outline-primary btn-sm">Voir Profil</a>
-                    </div>
-                </div>
-                </div>
-                <div class="col-md-3 team-member">
-                <div class="card border-0 shadow-sm">
-                    <img src="https://via.placeholder.com/150" class="card-img-top rounded-circle mx-auto mt-3" alt="Membre de l'Équipe" style="width: 150px; height: 150px;">
-                    <div class="card-body">
-                    <h5 class="card-title text-primary">Alice Brown</h5>
-                    <p class="card-text text-muted">Designer UI/UX</p>
-                    <a href="#" class="btn btn-outline-primary btn-sm">Voir Profil</a>
-                    </div>
-                </div>
-                </div>
-                <div class="col-md-3 team-member">
-                <div class="card border-0 shadow-sm">
-                    <img src="https://via.placeholder.com/150" class="card-img-top rounded-circle mx-auto mt-3" alt="Membre de l'Équipe" style="width: 150px; height: 150px;">
-                    <div class="card-body">
-                    <h5 class="card-title text-primary">Bob Martin</h5>
-                    <p class="card-text text-muted">Développeur Backend</p>
-                    <a href="#" class="btn btn-outline-primary btn-sm">Voir Profil</a>
-                    </div>
-                </div>
-                </div>
-            </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <p>&copy; 2023 Team Best CV. Tous droits réservés. <a href="#">Mentions légales</a></p>
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+      <!-- Carte membre 2 -->
+      <div class="col" data-aos="fade-up" data-aos-delay="200">
+        <div class="card h-100 text-center">
+          <img src="https://via.placeholder.com/150" class="card-img-top" alt="Photo membre 2" />
+          <div class="card-body">
+            <h5 class="card-title">Julien Dubois</h5>
+            <p class="card-text">Développeur Backend</p>
+            <button class="btn btn-primary" onclick="showCV('Julien Dubois', 'Backend - PHP, Laravel, MySQL')">Voir CV</button>
+          </div>
         </div>
-    </footer>
+      </div>
 
-    <script src="composant/js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- Carte membre 3 -->
+      <div class="col" data-aos="fade-up" data-aos-delay="300">
+        <div class="card h-100 text-center">
+          <img src="https://via.placeholder.com/150" class="card-img-top" alt="Photo membre 3" />
+          <div class="card-body">
+            <h5 class="card-title">Fatima El Amrani</h5>
+            <p class="card-text">UX/UI Designer</p>
+            <button class="btn btn-primary" onclick="showCV('Fatima El Amrani', 'Design - Figma, Adobe XD, Prototypage')">Voir CV</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte membre 4 -->
+      <div class="col" data-aos="fade-up" data-aos-delay="400">
+        <div class="card h-100 text-center">
+          <img src="https://via.placeholder.com/150" class="card-img-top" alt="Photo membre 4" />
+          <div class="card-body">
+            <h5 class="card-title">Karim Benyamina</h5>
+            <p class="card-text">Chef de Projet</p>
+            <button class="btn btn-primary" onclick="showCV('Karim Benyamina', 'Gestion - Agile, Scrum, Trello')">Voir CV</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modale -->
+  <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cvModalLabel">CV</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+        </div>
+        <div class="modal-body" id="cvContent">
+          Chargement du CV...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pied de page amélioré -->
+  <footer data-aos="fade-up">
+    <div class="container">
+      <div class="row">
+
+        <!-- À propos -->
+        <div class="col-md-4 mb-4">
+          <h5>À propos</h5>
+          <p>Team-Best-CV est une équipe composée de professionnels passionnés, unis par la volonté de créer des solutions innovantes et collaboratives.</p>
+        </div>
+
+        <!-- Contact -->
+        <div class="col-md-4 mb-4" id="contact">
+          <h5>Contact</h5>
+          <p>
+            <i class="bi bi-geo-alt-fill"></i> Infocentre de la Salle Stella Maris<br />
+            <i class="bi bi-envelope-fill"></i> teambestcv@gmail.com<br />
+            <i class="bi bi-telephone-fill"></i> +261 34 28 554 02
+          </p>
+        </div>
+
+        <!-- Réseaux sociaux & Newsletter -->
+        <div class="col-md-4 mb-4">
+          <h5>Réseaux sociaux</h5>
+          <div class="mb-3">
+            <a href="#" class="btn btn-outline-light btn-sm me-2" aria-label="Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="#" class="btn btn-outline-light btn-sm me-2" aria-label="Twitter">
+              <i class="bi bi-twitter"></i>
+            </a>
+            <a href="#" class="btn btn-outline-light btn-sm me-2" aria-label="LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="#" class="btn btn-outline-light btn-sm" aria-label="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+          </div>
+
+          <h5>Newsletter</h5>
+          <form id="newsletterForm" class="d-flex" onsubmit="return subscribeNewsletter(event)">
+            <input
+              type="email"
+              class="form-control form-control-sm me-2"
+              placeholder="Votre email"
+              aria-label="Email newsletter"
+              required
+            />
+            <button type="submit" class="btn btn-primary btn-sm">S'inscrire</button>
+          </form>
+          <small id="newsletterMsg" class="form-text mt-2"></small>
+        </div>
+      </div>
+
+      <hr class="bg-light" />
+
+      <div class="text-center">
+        <p class="mb-0">&copy; 2025 Team-Best-CV. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      offset: 100,
+      duration: 800,
+      easing: 'ease-in-out',
+    });
+
+    function showCV(nom, contenu) {
+      document.getElementById('cvModalLabel').innerText = `CV de ${nom}`;
+      document.getElementById('cvContent').innerText = contenu;
+      var modal = new bootstrap.Modal(document.getElementById('cvModal'));
+      modal.show();
+    }
+
+    window.onload = () => {
+      setTimeout(() => {
+        const loader = document.getElementById('loader');
+        loader.classList.add('hidden');
+      }, 1000); // 1 seconde de délai
+    };
+
+    function subscribeNewsletter(event) {
+      event.preventDefault();
+      const form = event.target;
+      const input = form.querySelector('input[type="email"]');
+      const msg = document.getElementById('newsletterMsg');
+      
+      if (input.value) {
+        msg.textContent = `Merci pour votre inscription, ${input.value} !`;
+        msg.style.color = 'lightgreen';
+        form.reset();
+      } else {
+        msg.textContent = 'Veuillez entrer un email valide.';
+        msg.style.color = 'red';
+      }
+      return false;
+    }
+  </script>
 </body>
 </html>
