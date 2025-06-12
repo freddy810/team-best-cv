@@ -9,79 +9,6 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
   <link rel="stylesheet" href="composant/css/style.css">
-  <style>
-    /* Loader personnalisé */
-    #loader {
-      position: fixed;
-      z-index: 9999;
-      background-color: #f8f9fa;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      transition: opacity 0.5s ease, visibility 0.5s ease;
-    }
-
-    .typewriter h4 {
-      font-family: monospace;
-      overflow: hidden;
-      border-right: 2px solid;
-      white-space: nowrap;
-      animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
-    }
-
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-
-    @keyframes blink {
-      50% { border-color: transparent; }
-    }
-
-    /* Hero section stylisée */
-    .hero {
-      background-color: #0d6efd;
-      color: white;
-      text-align: center;
-      padding: 120px 30px;
-      position: relative;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: bold;
-      animation: slideFadeDown 1.2s ease-in-out forwards;
-    }
-
-    .hero p {
-      font-size: 1.3rem;
-      margin-top: 1rem;
-      animation: slideFadeUp 1.2s ease-in-out forwards;
-    }
-
-    @keyframes slideFadeDown {
-      from { opacity: 0; transform: translateY(-40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes slideFadeUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-    }
-  </style>
 </head>
 <body>
 
@@ -203,21 +130,6 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init();
-
-    // Masquer le loader après chargement
-    window.addEventListener("load", () => {
-      const loader = document.getElementById("loader");
-      loader.style.opacity = "0";
-      loader.style.visibility = "hidden";
-    });
-
-    function subscribeNewsletter(event) {
-      event.preventDefault();
-      document.getElementById("newsletterMsg").textContent = "Merci pour votre inscription !";
-      return false;
-    }
-  </script>
+  <script src="composant/js/main.js"></script>
 </body>
 </html>
