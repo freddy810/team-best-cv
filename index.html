@@ -1,85 +1,135 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de l'Équipe</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />   
-    <link rel="stylesheet" href="composant/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Team-Best-CV</title>
+  <link rel="icon" href="images/DSC04588.JPG.jpg" type="image/png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="composant/css/style.css">
 </head>
 <body>
-    <header class="hero">
-        <div class="container">
-            <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">Bienvenue sur le Portfolio de notre Équipe</h1>
-            <p class="lead animate__animated animate__fadeInUp animate__delay-1s">Rencontrez les personnes incroyables derrière notre succès</p>
-            <button class="btn btn-warning btn-lg mt-3 animate__animated animate__zoomIn animate__delay-2s" onclick="scrollToTeam()">Découvrir l'équipe</button>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="spinner-border text-primary mb-3" role="status" style="width: 4rem; height: 4rem;">
+      <span class="visually-hidden">Chargement...</span>
+    </div>
+    <div class="typewriter">
+      <h4>Chargement du CV collaboratif...</h4>
+    </div>
+  </div>
+
+  <!-- En-tête Hero -->
+  <div class="hero" id="hero" data-aos="zoom-in">
+    <h1 class="display-4">Team Best CV</h1>
+    <p class="lead">Découvrez les profils de notre équipe talentueuse</p>
+  </div>
+
+  <!-- Section des CV -->
+  <div class="container my-5" id="cvSection">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+
+      <!-- Carte membre 1 -->
+      <div class="col" data-aos="fade-up" data-aos-delay="100">
+        <div class="card h-100 text-center">
+          <img src="images/DSC04588.JPG.jpg" class="card-img-top" alt="Photo membre 1" />
+          <div class="card-body">
+            <h5 class="card-title">RAZANATSOA Aimé Freddy</h5>
+            <p class="card-text">Développeur Web et Application</p>
+            <a href="cv_collaboratif/freddy.html" class="btn btn-primary">Voir CV</a>
+          </div>
         </div>
-    </header>
+      </div>
 
-    <main class="container my-5">
-        <section id="team" class="text-center py-5">
-            <div class="container">
-            <h2 class="mb-4 fw-bold text-primary">Notre Équipe</h2>
-            <p class="mb-5 text-muted">Nous sommes un groupe de professionnels passionnés, dédiés à l'excellence.</p>
-            <div class="row g-4">
-                <div class="col-md-3 team-member">
-                <div class="card border-0 shadow-sm">
-                    <img src="images/DSC04588.JPG.jpg" class="card-img-top rounded-circle mx-auto mt-3" alt="Membre de l'Équipe" style="width: 150px; height: 150px;">
-                    <div class="card-body">
-                    <h5 class="card-title text-primary">John Doe</h5>
-                    <p class="card-text text-muted">Chef de Projet</p>
-                    <a href="#" class="btn btn-outline-primary btn-sm">Voir Profil</a>
-                    </div>
-                </div>
-                </div>
-                <div class="col-md-3 team-member">
-                <div class="card border-0 shadow-sm">
-                    <img src="https://via.placeholder.com/150" class="card-img-top rounded-circle mx-auto mt-3" alt="Membre de l'Équipe" style="width: 150px; height: 150px;">
-                    <div class="card-body">
-                    <h5 class="card-title text-primary">Jane Smith</h5>
-                    <p class="card-text text-muted">Développeuse Principale</p>
-                    <a href="#" class="btn btn-outline-primary btn-sm">Voir Profil</a>
-                    </div>
-                </div>
-                </div>
-                <div class="col-md-3 team-member">
-                <div class="card border-0 shadow-sm">
-                    <img src="https://via.placeholder.com/150" class="card-img-top rounded-circle mx-auto mt-3" alt="Membre de l'Équipe" style="width: 150px; height: 150px;">
-                    <div class="card-body">
-                    <h5 class="card-title text-primary">Alice Brown</h5>
-                    <p class="card-text text-muted">Designer UI/UX</p>
-                    <a href="#" class="btn btn-outline-primary btn-sm">Voir Profil</a>
-                    </div>
-                </div>
-                </div>
-                <div class="col-md-3 team-member">
-                <div class="card border-0 shadow-sm">
-                    <img src="https://via.placeholder.com/150" class="card-img-top rounded-circle mx-auto mt-3" alt="Membre de l'Équipe" style="width: 150px; height: 150px;">
-                    <div class="card-body">
-                    <h5 class="card-title text-primary">Bob Martin</h5>
-                    <p class="card-text text-muted">Développeur Backend</p>
-                    <a href="#" class="btn btn-outline-primary btn-sm">Voir Profil</a>
-                    </div>
-                </div>
-                </div>
-            </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <p>&copy; 2023 Team Best CV. Tous droits réservés. <a href="#">Mentions légales</a></p>
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+      <!-- Autres cartes membres -->
+      <div class="col" data-aos="fade-up" data-aos-delay="200">
+        <div class="card h-100 text-center">
+          <img src="#" class="card-img-top" alt="Photo membre 2" />
+          <div class="card-body">
+            <h5 class="card-title">Membre 2</h5>
+            <p class="card-text">Fonction</p>
+            <button class="btn btn-primary">Voir CV</button>
+          </div>
         </div>
-    </footer>
+      </div>
 
-    <script src="composant/js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+      <div class="col" data-aos="fade-up" data-aos-delay="300">
+        <div class="card h-100 text-center">
+          <img src="#" class="card-img-top" alt="Photo membre 3" />
+          <div class="card-body">
+            <h5 class="card-title">Membre 3</h5>
+            <p class="card-text">Fonction</p>
+            <button class="btn btn-primary">Voir CV</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col" data-aos="fade-up" data-aos-delay="400">
+        <div class="card h-100 text-center">
+          <img src="#" class="card-img-top" alt="Photo membre 4" />
+          <div class="card-body">
+            <h5 class="card-title">Membre 4</h5>
+            <p class="card-text">Fonction</p>
+            <button class="btn btn-primary">Voir CV</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Pied de page -->
+  <footer data-aos="fade-up">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-4 mb-4">
+          <h5>À propos</h5>
+          <p>Team-Best-CV est une équipe composée de professionnels passionnés, unis par la volonté de créer des solutions innovantes et collaboratives.</p>
+        </div>
+
+        <div class="col-md-4 mb-4" id="contact">
+          <h5>Contact</h5>
+          <p>
+            <i class="bi bi-geo-alt-fill"></i> Infocentre de la Salle Stella Maris<br />
+            <i class="bi bi-envelope-fill"></i> teambestcv@gmail.com<br />
+            <i class="bi bi-telephone-fill"></i> +261 34 28 554 02
+          </p>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <h5>Réseaux sociaux</h5>
+          <div class="mb-3">
+            <a href="#" class="btn btn-outline-light btn-sm me-2"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="btn btn-outline-light btn-sm me-2"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="btn btn-outline-light btn-sm me-2"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="btn btn-outline-light btn-sm"><i class="bi bi-instagram"></i></a>
+          </div>
+
+          <h5>Newsletter</h5>
+          <form id="newsletterForm" class="d-flex" onsubmit="return subscribeNewsletter(event)">
+            <input type="email" class="form-control form-control-sm me-2" placeholder="Votre email" required />
+            <button type="submit" class="btn btn-primary btn-sm">S'inscrire</button>
+          </form>
+          <small id="newsletterMsg" class="form-text mt-2"></small>
+        </div>
+
+      </div>
+
+      <hr class="bg-light" />
+
+      <div class="text-center">
+        <p class="mb-0">&copy; 2025 Team-Best-CV. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="composant/js/main.js"></script>
 </body>
 </html>

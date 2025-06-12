@@ -1,58 +1,167 @@
 body {
-    font-family: 'Poppins', Arial, sans-serif;
-}
-.hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1500x500') no-repeat center center;
-    background-size: cover;
+    background: #f8f9fa;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* Ajout d'un padding-bottom pour éviter que le footer bloque les animations */
+  .container {
+    padding-bottom: 100px;
+  }
+
+  /* Loader plein écran */
+  #loader {
+    position: fixed;
+    z-index: 9999;
+    background: white;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 1.5s ease, visibility 1.5s;
+    flex-direction: column;
+  }
+
+  #loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .typewriter h4 {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #007bff;
+    animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+    font-family: monospace;
+    color: #007bff;
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  @keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: #007bff }
+  }
+
+  .hero {
+    background: linear-gradient(to right, #4e54c8, #8f94fb);
     color: white;
+    padding: 80px 0;
     text-align: center;
-    padding: 100px 20px;
-    animation: fadeIn 2s ease-in-out;
-}
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-.team-member img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    transition: transform 0.3s ease;
-}
-.team-member img:hover {
-    transform: scale(1.1);
-}
-.card {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-}
-.footer {
-    background-color: #343a40;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Footer amélioré */
+  footer {
+    background: #343a40;
     color: white;
-    padding: 20px;
-    text-align: center;
-}
-.footer a {
-    color: #ffc107;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    text-align: left;
+  }
+
+  footer h5 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  footer a {
+    color: white;
     text-decoration: none;
-}
-.footer a:hover {
+  }
+
+  footer a:hover {
     text-decoration: underline;
-}
-.social-icons a {
+  }
+
+  footer p i {
+    margin-right: 8px;
+    color: #0d6efd;
+  }
+
+  /* Loader personnalisé */
+  #loader {
+    position: fixed;
+    z-index: 9999;
+    background-color: #f8f9fa;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+
+  .typewriter h4 {
+    font-family: monospace;
+    overflow: hidden;
+    border-right: 2px solid;
+    white-space: nowrap;
+    animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+
+  /* Hero section stylisée */
+  .hero {
+    background-color: #0d6efd;
     color: white;
-    margin: 0 10px;
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-}
-.social-icons a:hover {
-    color: #ffc107;
-}
+    text-align: center;
+    padding: 120px 30px;
+    position: relative;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    animation: slideFadeDown 1.2s ease-in-out forwards;
+  }
+
+  .hero p {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    animation: slideFadeUp 1.2s ease-in-out forwards;
+  }
+
+  @keyframes slideFadeDown {
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideFadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.2rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+    }
+  }
