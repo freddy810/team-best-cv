@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+.container {
+    position: relative; /* nécessaire pour positionner le bouton */
+    max-width: 900px;
+    margin: 60px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header img {
+    width: 150px;
+    border-radius: 50%;
+    border: 3px solid #eef3f6;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section ul li {
+    margin-bottom: 10px;
+}
+
+.contact ul li a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.contact ul li a:hover {
+    text-decoration: underline;
+}
+
+.skills ul li i,
+.contact ul li i {
+    color: #3498db;
+    margin-right: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease;
+    z-index: 10;
+}
+
+.close-btn:hover {
+    background-color: #c82333;
+}
